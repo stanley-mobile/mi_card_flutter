@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,24 +13,64 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.teal,
         body: SafeArea(
             child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Container(
-              height: 100.0,
-              width: 100.0,
-              color: Colors.white,
-              child: Text('Container 1'),
+            CircleAvatar(
+              radius: 50.0,
+              backgroundImage: AssetImage('images/Lynn.jpg'),
             ),
-            Container(
-              width: 100.0,
-              height: 100.0,
-              color: Colors.blue,
-              child: Text('Container 2'),
+            Text(
+              'Lynn Chen',
+              style: TextStyle(
+                  fontFamily: 'Pacifico',
+                  fontSize: 40.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
             ),
-            Container(
-              width: 100.0,
-              height: 100.0,
-              color: Colors.red,
-              child: Text('Container 3'),
+            Text(
+              'Teacher',
+              style: TextStyle(
+                  fontFamily: 'Source Sans Pro',
+                  color: Colors.teal.shade100,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                  letterSpacing: 2.5),
+            ),
+            SizedBox(
+              height: 20.0,
+              width: 150,
+              child: Divider(
+                color: Colors.teal.shade100,
+              ),
+            ),
+            Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.teal,
+                  ),
+                  title: Text('+416-823-9160',
+                      style: TextStyle(
+                          color: Colors.teal.shade900,
+                          fontFamily: 'Source Sans Pro',
+                          fontSize: 20.0)),
+                )),
+            Card(
+              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25),
+              child: ListTile(
+                leading: Icon(
+                  Icons.email,
+                  color: Colors.teal,
+                ),
+                title: Text(
+                  'Lynn.Chen@gmail.com',
+                  style: TextStyle(
+                      color: Colors.teal.shade900,
+                      fontFamily: 'Source Sans Pro',
+                      fontSize: 20.0),
+                ),
+              ),
             ),
           ],
         )),
